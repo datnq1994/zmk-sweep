@@ -80,8 +80,8 @@
        		sym_layer {
 		bindings = <
 		&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		&kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-		&kp GT &kp DOLLAR &kp LPAR &kp LBRC &kp LBKT 	&kp EQUAL &kp QUESTION &kp SQT &kp MINUS &kp ASTRK
-		&kp GT &kp PERCENT &kp LPAR &kp RBRC &kp RBKT 	&kp AT &kp EXCL &kp DQT &kp PLUS &kp SLASH
+		&kp LT &kp DOLLAR &kp LPAR &kp LBRC &kp LBKT 	&kp EQUAL &kp QUESTION &kp SQT &kp MINUS &kp ASTRK
+		&kp GT &kp PERCENT &kp RPAR &kp RBRC &kp RBKT 	&kp AT &kp EXCL &kp DQT &kp PLUS &kp SLASH
 					                                        &mo FNC  &mo SYM2       &trans &trans
 		>;
 		};
@@ -109,9 +109,9 @@
         // Low frequency symbols.
        		symbols_2_layer {
 		bindings = <
-		&kp SEMI &kp UNDER &kp POUND &kp IT_EUR &kp HASH         &none &none &none &none &none 
-		&kp GRAVE &kp TILDE &kp BSLH &kp PIPE &kp AMPS         &none &none &none &none &none
-		&none 			&none 			 &kp IT_SECT &kp IT_CCED &kp IT_DEG				  &none &none &none &none &none
+		&kp CARET &kp UNDER &kp POUND &kp IT_EUR &kp HASH        &none &none &none &none &none 
+		&kp GRAVE &kp TILDE &kp BSLH &kp PIPE &kp AMPS         	&none &none &none &none &none
+		&none &none &kp IT_SECT &kp IT_CCED &kp IT_DEG		&none &none &none &none &none
           				           												&none &none        	&none &none 
 		>;
 		};
