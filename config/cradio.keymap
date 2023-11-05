@@ -98,8 +98,8 @@
 		    ext_layer {
 		bindings = <
 		&kp ESC  &trans &trans  &trans  &trans    			&kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
-		&sk LSHIFT &sk LCTRL  &sk LALT  &sk LGUI  &kp RALT 		&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
-		&kp LG(Z)  &kp LG(X) &kp LG(C) &kp TAB   &kp LG(V)         	&kp LA(BSPC) &kp BSPC &trans &trans  &trans
+		&sk LSHIFT &sk LCTRL  &sk LALT  &sk LGUI  &kp LG(TAB) 		&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
+		&kp LG(Z)  &kp LG(X) &kp LG(C) &kp TAB  &kp LG(V)         	&kp LA(BSPC) &kp BSPC &trans &trans  &trans
 					        &trans &trans        	&kp ENTER  &trans 
 		>;
 		};
