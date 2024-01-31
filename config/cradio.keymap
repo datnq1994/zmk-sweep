@@ -30,47 +30,56 @@
 };
 
 / {
-		macros {
-				// sometimes my device thinks a modifier is being held down
-				// pressing all modifiers fixes it.
-				unstick: unstick {
-					label = "ZM_unstick";
-					compatible = "zmk,behavior-macro";
-					#binding-cells = <0>;
-					bindings
-						= <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
-				};
-		};
+	macros {
+		// sometimes my device thinks a modifier is being held down
+		// pressing all modifiers fixes it.
+		unstick: unstick {
+			label = "ZM_unstick";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+			};
+	};
+	combos {
+		compatible = "zmk,combos";
+		// both right thumb keys
+        	combo_accent {
+            		timeout-ms = <300>;
+            		key-positions = <32 33>;
+            		bindings = <&mo ACCENT>;
+        		};
+		// internal-left & external-right thumb keys
+		combo_sym2 {
+			timeout-ms = <200>;
+			key-positions = <31 33>;
+			bindings = <&mo SYM2>;
+			};
+		// both left thumb keys
+		combo_settings {
+			timeout-ms = <300>;
+			key-positions = <30 31>;
+			bindings = <&mo SETTINGS>;
+			};
+    	};
 
-    combos {
-        compatible = "zmk,combos";
-				// both right thumb keys
-        combo_accent {
-            timeout-ms = <300>;
-            key-positions = <32 33>;
-            bindings = <&mo ACCENT>;
-        };
-				// internal-left & external-right thumb keys
-				combo_sym2 {
-						timeout-ms = <200>;
-						key-positions = <31 33>;
-						bindings = <&mo SYM2>;
-				};
-				// both left thumb keys
-				combo_settings {
-						timeout-ms = <300>;
-						key-positions = <30 31>;
-						bindings = <&mo SETTINGS>;
-				};
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <SYM EXT>;
-            then-layer = <FNC>;
-        };
-    };
+    	conditional_layers {
+        	compatible = "zmk,conditional-layers";
+        	tri_layer {
+            		if-layers = <SYM EXT>;
+            		then-layer = <FNC>;
+        	};
+    	};
+    	behaviors {
+        	tui: tui {
+            		compatible = "zmk,behavior-hold-tap";
+            		#binding-cells = <2>;
+            		flavor = "tap-unless-interrupted";
+            		tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            		/quick-tap-ms = <200>;
+            		bindings = <&kp>, <&kp>;
+            		// hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
+        	};
+    	};
 
     keymap {
             compatible = "zmk,keymap";
@@ -90,7 +99,7 @@
 		bindings = <
 		&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		  	&kp N6 &kp N7 &kp N8 &kp N9 &kp N0
 		&kp AMPS &kp ASTRK &kp DOLLAR &kp LPAR &kp LBKT 	  	&kp EQUAL &kp GRAVE &kp SQT &kp MINUS &kp BSLH
-		&kp AT &kp HASH &kp PERCENT &kp RPAR &kp RBKT		&kp LA(BSPC) &kp BSPC &kp COMMA &kp DOT &mt TAB SLASH
+		&kp AT &kp HASH &kp PERCENT &kp RPAR &kp RBKT		&kp LA(BSPC) &kp BSPC &kp COMMA &kp DOT &tui TAB SLASH
 					   &trans  &trans      	&trans &trans
 		>;
 		};
@@ -100,7 +109,7 @@
 		bindings = <
 		&kp ESC  &trans &trans  &trans  &trans    			&kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
 		&kp TAB &sk LCTRL  &sk LALT  &sk LGUI  &trans 		&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
-		&trans  &trans &trans &sk LSHIFT  &trans         	&kp LA(BSPC) &kp BSPC &trans &trans  &trans
+		&kp LG(Z)  &kp LG(X) &kp LG(C) &sk LSHIFT  &kp LG(V)         	&kp LA(BSPC) &kp BSPC &trans &trans  &trans
 					        &trans &trans        	&kp ENTER  &trans 
 		>;
 		};
