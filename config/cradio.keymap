@@ -25,6 +25,7 @@
 };
 
 &sk {
+    quick-release;
     ignore-modifiers;
 };
 
@@ -89,7 +90,7 @@
 		bindings = <
 		&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		  	&kp N6 &kp N7 &kp N8 &kp N9 &kp N0
 		&kp AMPS &kp ASTRK &kp DOLLAR &kp LPAR &kp LBKT 	  	&kp EQUAL &kp GRAVE &kp SQT &kp MINUS &kp BSLH
-		&kp AT &kp HASH &kp PERCENT &kp RPAR &kp RBKT		&kp LA(BSPC) &kp BSPC &kp COMMA &kp DOT &kp SLASH
+		&kp AT &kp HASH &kp PERCENT &kp RPAR &kp RBKT		&kp LA(BSPC) &kp BSPC &kp COMMA &kp DOT &mt TAB SLASH
 					   &trans  &trans      	&trans &trans
 		>;
 		};
@@ -98,7 +99,7 @@
 		    ext_layer {
 		bindings = <
 		&kp ESC  &trans &trans  &trans  &trans    			&kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
-		&sk TAB &sk LCTRL  &sk LALT  &sk LGUI  &trans 		&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
+		&kp TAB &sk LCTRL  &sk LALT  &sk LGUI  &trans 		&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
 		&trans  &trans &trans &sk LSHIFT  &trans         	&kp LA(BSPC) &kp BSPC &trans &trans  &trans
 					        &trans &trans        	&kp ENTER  &trans 
 		>;
